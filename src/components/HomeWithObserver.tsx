@@ -29,14 +29,14 @@ export default function HomeWithObserver() {
               {`Wooilyotojunn’s pottery stands as a blend of minimalist elegance and sophisticated craftsmanship,\neach piece a unique embodiment of artistry.`}
             </p>
           </div>
-          <Image
-            src={"/static/images/main/main_1.jpg"}
-            width={700}
-            height={300}
-            alt="메인1"
-            objectFit="cover"
-            layout="responsive"
-          />
+          <div className="relative w-full max-w-[1000px] aspect-[1/1]">
+            <Image
+              src={"/static/images/main/main_1.jpg"}
+              alt="메인1"
+              fill
+              objectFit="cover"
+            />
+          </div>
         </div>
         {/* feature section 2 */}
         <div
@@ -47,13 +47,14 @@ export default function HomeWithObserver() {
               : "opacity-0 translate-y-20"
           }`}
         >
-          <Image
-            src={"/static/images/main/main_2.jpg"}
-            width={700}
-            height={300}
-            alt="메인2"
-            layout="responsive"
-          />
+          <div className="relative w-full max-w-[1000px] aspect-[1/1]">
+            <Image
+              src={"/static/images/main/main_2.jpg"}
+              alt="메인2"
+              fill
+              objectFit="cover"
+            />
+          </div>
           <div className="flex flex-grow flex-col px-10 py-10">
             <h2 className="font-semibold">Artistic Essence</h2>
             <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
@@ -76,13 +77,14 @@ export default function HomeWithObserver() {
               {`Crafted for both utility and aesthetic allure,\nthese pieces elevate everyday use while remaining timeless in design.`}
             </p>
           </div>
-          <Image
-            src={"/static/images/main/main_3.jpg"}
-            width={700}
-            height={300}
-            alt="메인3"
-            layout="responsive"
-          />
+          <div className="relative w-full max-w-[1000px] aspect-[1/1]">
+            <Image
+              src={"/static/images/main/main_3.jpg"}
+              alt="메인3"
+              fill
+              objectFit="cover"
+            />
+          </div>
         </div>
       </div>
 

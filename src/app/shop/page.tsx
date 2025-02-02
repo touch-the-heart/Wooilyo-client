@@ -136,7 +136,7 @@ export default function ShopPage() {
 
       {/* 모바일 메뉴 버튼 */}
       <button
-        className="md:hidden p-4 bg-gray-100 text-gray-800"
+        className="md:hidden p-4 text-gray-800 border-b-[1px] border-gray-900"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
       >
         ☰ Menu

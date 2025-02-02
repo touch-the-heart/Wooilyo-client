@@ -1,15 +1,22 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="relative bg-white border-b-[1px] border-gray-900">
-      <div className="container mx-10 py-5 text-center flex flex-row justify-between">
+    <div className="bg-white border-b-[1px] border-gray-900">
+      <div className="container px-5 py-5 text-center flex flex-row justify-between">
         <Link href="/">
           <h1 className="text-2xl font-bold text-gray-900 cursor-pointer">
             WooilyoToujunn
           </h1>
         </Link>
-        <div className="flex felx-row items-center gap-10">
+
+        <button className="block md:hidden">☰</button>
+
+        <div className="hidden md:flex flex-row items-center gap-10">
           <li className="list-none cursor-pointer">
             <Link href="/shop">SHOP</Link>
           </li>
