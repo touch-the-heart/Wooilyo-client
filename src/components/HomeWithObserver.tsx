@@ -29,7 +29,7 @@ export default function HomeWithObserver() {
               {`Wooilyotojunn’s pottery stands as a blend of minimalist elegance and sophisticated craftsmanship,\neach piece a unique embodiment of artistry.`}
             </p>
           </div>
-          <div className="relative w-full max-w-[1000px] aspect-[1/1]">
+          <div className="relative w-full md:w-[50%] aspect-[1/1]">
             <Image
               src={"/static/images/main/main_1.jpg"}
               alt="메인1"
@@ -47,7 +47,7 @@ export default function HomeWithObserver() {
               : "opacity-0 translate-y-20"
           }`}
         >
-          <div className="relative w-full max-w-[1000px] aspect-[1/1]">
+          <div className="relative w-full md:w-[50%] aspect-[1/1]">
             <Image
               src={"/static/images/main/main_2.jpg"}
               alt="메인2"
@@ -77,7 +77,7 @@ export default function HomeWithObserver() {
               {`Crafted for both utility and aesthetic allure,\nthese pieces elevate everyday use while remaining timeless in design.`}
             </p>
           </div>
-          <div className="relative w-full max-w-[1000px] aspect-[1/1]">
+          <div className="relative w-full md:w-[50%] aspect-[1/1]">
             <Image
               src={"/static/images/main/main_3.jpg"}
               alt="메인3"
