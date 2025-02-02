@@ -23,7 +23,7 @@ export default function HomeWithObserver() {
       <div id="explore" className="flex flex-grow flex-col bg-white">
         {/* feature section 1 */}
         <div className="flex flex-row border-b-[1px] border-gray-100">
-          <div className="flex flex-grow flex-col px-10 py-20">
+          <div className="flex flex-grow flex-col px-10 py-10">
             <h2 className="font-semibold">Distinctive Design</h2>
             <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
               {`Wooilyotojunn’s pottery stands as a blend of minimalist elegance and sophisticated craftsmanship,\neach piece a unique embodiment of artistry.`}
