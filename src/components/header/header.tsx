@@ -7,7 +7,7 @@ export const Header = () => {
 
   return (
     <div className="bg-white border-b-[1px] border-gray-900">
-      <div className="container px-5 py-5 text-center flex flex-row justify-between">
+      <div className="px-5 sm:px-10 md:px-20 py-5 text-center flex flex-row justify-between">
         <Link href="/">
           <h1 className="text-2xl font-bold text-gray-900 cursor-pointer">
             WooilyoToujunn

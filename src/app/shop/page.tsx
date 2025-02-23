@@ -112,9 +112,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "../../components/header";
-import { PRODUCTS_DATA } from "../../data/products";
+import { PRODUCTS_DATA } from "../../data/mock/products.data";
 import { useEffect, useState } from "react";
-import { PRODUCT } from "../../data/types/products";
+import { PRODUCT } from "../../types/data/products.type";
 
 export default function ShopPage() {
   const [data, setData] = useState<PRODUCT[]>(PRODUCTS_DATA);
@@ -131,9 +131,7 @@ export default function ShopPage() {
   }, [currentType]);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <Header />
-
+    <>
       {/* 모바일 메뉴 버튼 */}
       <button
         className="md:hidden p-4 text-gray-800 border-b-[1px] border-gray-900"
@@ -212,6 +210,6 @@ export default function ShopPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,28 +1,41 @@
-"use client"; // 클라이언트 컴포넌트로 설정
+"use client";
 
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import { Header } from "./header";
 
-export default function HomeWithObserver() {
-  const { ref: section2Ref, inView: section2InView } = useInView({
-    triggerOnce: true, // 스크롤 시 반복적으로 애니메이션 실행
-    threshold: 0.2, // 30% 이상 보일 때 트리거
-  });
-
-  const { ref: section3Ref, inView: section3InView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-
+export const MainDisplaySection = () => {
   return (
-    <div className="flex flex-col bg-gray-50 h-screen">
-      {/* Hero Section */}
-      <Header />
-      {/* Featured Section */}
-      <div id="explore" className="flex flex-grow flex-col bg-white">
-        {/* feature section 1 */}
-        <div className="flex flex-row border-b-[1px] border-gray-100">
+    <>
+      <div className="flex flex-row bg-white justify-center w-full max-w-[80%] mx-auto">
+        <div className="hidden md:flex flex-col flex-[4] border-[1px]">
+          <h2 className="relative top-20 left-20 font-semibold text-lg">
+            Distinctive Design
+          </h2>
+          <p className="relative top-40 left-20 text-sm text-gray-600 leading-relaxed whitespace-pre-line z-10">
+            {`Wooilyotojunn’s pottery stands as a blend of minimalist elegance and sophisticated craftsmanship,\neach piece a unique embodiment of artistry.`}
+          </p>
+        </div>
+        <div className="flex-1 md:flex-[6] relative aspect-[1/1]">
+          <div className="relative w-full h-full">
+            <Image src={"/static/images/main/main_1.jpg"} alt="메인1" fill />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+{
+  /* Featured Section */
+}
+{
+  /* <div id="explore" className="flex flex-grow flex-col bg-white"> */
+}
+{
+  /* feature section 1 */
+}
+{
+  /* <div className="flex flex-row border-b-[1px] border-gray-100">
           <div className="flex flex-grow flex-col px-10 py-10">
             <h2 className="font-semibold">Distinctive Design</h2>
             <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
@@ -37,9 +50,13 @@ export default function HomeWithObserver() {
               objectFit="cover"
             />
           </div>
-        </div>
-        {/* feature section 2 */}
-        <div
+        </div> */
+}
+{
+  /* feature section 2 */
+}
+{
+  /* <div
           ref={section2Ref}
           className={`flex flex-row border-b-[1px] border-gray-100 transform transition-all duration-1000 ${
             section2InView
@@ -61,9 +78,13 @@ export default function HomeWithObserver() {
               {`Each creation is a refined masterpiece, where texture and form converge,\nevoking both natural beauty and intricate artistry.`}
             </p>
           </div>
-        </div>
-        {/* feature section 3 */}
-        <div
+        </div> */
+}
+{
+  /* feature section 3 */
+}
+{
+  /* <div
           ref={section3Ref}
           className={`flex flex-row transform transition-all duration-1000 ${
             section3InView
@@ -85,15 +106,8 @@ export default function HomeWithObserver() {
               objectFit="cover"
             />
           </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="py-8 bg-white border-t-[1px] border-gray-900">
-        <div className="container mx-auto px-6 text-center text-gray-300">
-          <p>© 2025 WooilyoToujun. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
-  );
+        </div> */
+}
+{
+  /* </div> */
 }
