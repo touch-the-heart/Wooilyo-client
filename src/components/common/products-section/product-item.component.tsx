@@ -24,8 +24,12 @@ export const ProductItem = ({
         </div>
         <div className="mt-4 px-2">
           <div className="flex justify-between text-lg">
-            <h2 className="font-semibold">{item.title}</h2>
-            <h2 className="font-normal">{formatCurrency(item.price)}</h2>
+            <h2 className="font-normal text-sm md:font-semibold md:text-base text-gray-700">
+              {item.title}
+            </h2>
+            <h2 className="font-normal text-sm md:text-base text-gray-700">
+              {formatCurrency(item.price)}
+            </h2>
           </div>
           {showSubTitle && (
             <p className="text-gray-600 font-light text-sm">{item.sub_title}</p>

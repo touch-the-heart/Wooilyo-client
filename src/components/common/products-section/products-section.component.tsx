@@ -33,7 +33,7 @@ export const ProductsSection = () => {
 
   return (
     <div className="flex justify-center w-full">
-      <div className="w-full max-w-[80%] grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="w-full max-w-[80%] grid grid-cols-2 md:grid-cols-3 gap-10">
         {data.map((product, i) => {
           return <ProductItem item={product} key={`${product.id}_${i}`} />;
         })}
