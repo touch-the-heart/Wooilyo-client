@@ -1,9 +1,9 @@
 export interface PRODUCT {
   id: number;
   title: string;
-  sub_title: string;
+  subTitle: string;
   price: number;
-  thumbnail_image_url: string;
+  thumbnailImageUrl: string;
   type: string;
   category: string;
   subCategory: string;

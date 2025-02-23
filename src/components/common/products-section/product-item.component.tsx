@@ -15,7 +15,7 @@ export const ProductItem = ({
       <div className="flex flex-col cursor-pointer">
         <div className="flex justify-center">
           <Image
-            src={item.thumbnail_image_url}
+            src={item.thumbnailImageUrl}
             width={300}
             height={300}
             alt={item.title}
@@ -32,7 +32,7 @@ export const ProductItem = ({
             </h2>
           </div>
           {showSubTitle && (
-            <p className="text-gray-600 font-light text-sm">{item.sub_title}</p>
+            <p className="text-gray-600 font-light text-sm">{item.subTitle}</p>
           )}
         </div>
       </div>

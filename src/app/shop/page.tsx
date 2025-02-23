@@ -78,7 +78,7 @@
 //                     <div className="flex flex-col justify-between cursor-pointer">
 //                       <div className="flex justify-center">
 //                         <Image
-//                           src={e.thumbnail_image_url}
+//                           src={e.thumbnailImageUrl}
 //                           width={500}
 //                           height={500}
 //                           alt={`${e.title}`}
@@ -92,7 +92,7 @@
 //                           </h2>
 //                         </div>
 //                         <p className="text-gray-600 font-light">
-//                           {e.sub_title}
+//                           {e.subTitle}
 //                         </p>
 //                       </div>
 //                     </div>
@@ -185,7 +185,7 @@ export default function ShopPage() {
                   <div className="flex flex-col cursor-pointer">
                     <div className="flex justify-center">
                       <Image
-                        src={e.thumbnail_image_url}
+                        src={e.thumbnailImageUrl}
                         width={300}
                         height={300}
                         alt={e.title}
@@ -200,7 +200,7 @@ export default function ShopPage() {
                         </h2>
                       </div>
                       <p className="text-gray-600 font-light text-sm">
-                        {e.sub_title}
+                        {e.subTitle}
                       </p>
                     </div>
                   </div>
