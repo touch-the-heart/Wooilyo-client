@@ -9,7 +9,7 @@ export const MainDisplayCarouselItem = ({
   return (
     <div
       key={item.key}
-      className="flex flex-row bg-white justify-center w-full mx-auto h-[500px]"
+      className="flex flex-row bg-white justify-center w-full mx-auto"
     >
       <div
         key={item.key}
