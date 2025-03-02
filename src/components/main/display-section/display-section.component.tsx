@@ -27,7 +27,7 @@ const carouselItems: DisplayCarouselItem[] = [
 
 export const MainDisplaySection = () => {
   return (
-    <div className="flex flex-row bg-white justify-center w-full max-w-[80%] mx-auto">
+    <div className="flex flex-row bg-white justify-center w-full mx-auto">
       <Carousel
         items={carouselItems}
         renderItem={(item) => <MainDisplayCarouselItem item={item} />}
