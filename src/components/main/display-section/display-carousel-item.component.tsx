@@ -20,7 +20,7 @@ export const MainDisplayCarouselItem = ({
           {item.description}
         </p>
       </div>
-      <div className="flex-1 md:flex-[6] relative aspect-[1/1]">
+      <div className="flex-1 md:flex-[6] relative aspect-[4/3]">
         <div className="relative w-full h-full">
           <Image src={item.src} alt={item.key} fill />
         </div>
