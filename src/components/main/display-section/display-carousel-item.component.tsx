@@ -13,12 +13,10 @@ export const MainDisplayCarouselItem = ({
     >
       <div
         key={item.key}
-        className="hidden md:flex flex-col flex-[4] border-[1px]"
+        className="hidden md:flex flex-col flex-[4] border-[1px] px-[30px] py-[40px]"
       >
-        <h2 className="relative top-20 left-20 font-semibold text-lg">
-          {item.title}
-        </h2>
-        <p className="relative top-40 left-20 text-sm text-gray-600 leading-relaxed whitespace-pre-line z-10">
+        <h2 className="font-semibold text-lg">{item.title}</h2>
+        <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line z-10 mt-[30px]">
           {item.description}
         </p>
       </div>
