@@ -7,4 +7,5 @@ export interface PRODUCT {
   type: string;
   category: string;
   subCategory: string;
+  description?: string;
 }
