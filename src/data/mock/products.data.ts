@@ -47,7 +47,7 @@ export const PRODUCTS_DATA: PRODUCT[] = [
     subTitle: "계묘년을 기념한 오브제, 토깽이들",
     price: 30000,
     thumbnailImageUrl: "/static/images/products/object_1.jpg",
-    type: "object",
+    type: "others",
     category: "others",
     subCategory: "",
   },
