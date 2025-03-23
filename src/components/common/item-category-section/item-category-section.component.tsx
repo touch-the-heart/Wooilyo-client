@@ -6,39 +6,40 @@ import { ItemCategoryList } from ".";
 export const ItemCategorySection = () => {
   const [isSticky, setIsSticky] = useState(false);
   const categorySectionRef = useRef<HTMLDivElement | null>(null);
-  const headerRef = useRef<HTMLElement | null>(null); // 헤더 참조 추가
+  const originalPositionRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (categorySectionRef.current && headerRef.current) {
-        // 헤더의 높이를 구합니다.
-        const headerHeight = headerRef.current.offsetHeight;
+    // 컴포넌트가 마운트될 때 원래 위치 저장
+    if (categorySectionRef.current) {
+      originalPositionRef.current = categorySectionRef.current.offsetTop;
+    }
 
-        // 카테고리 섹션의 위치가 헤더 아래로 내려갔을 때 고정
-        const sectionTop =
-          categorySectionRef.current.getBoundingClientRect().top;
-        if (sectionTop <= headerHeight) {
+    const handleScroll = () => {
+      if (categorySectionRef.current && originalPositionRef.current !== null) {
+        const scrollPosition = window.scrollY;
+        const headerHeight = 72; // 헤더 높이
+        
+        // 스크롤을 내릴 때 헤더 아래에 도달하면 고정
+        if (scrollPosition >= originalPositionRef.current - headerHeight) {
           setIsSticky(true);
-        } else {
+        }
+        // 스크롤을 올릴 때 원래 위치에 도달하면 고정 해제
+        else {
           setIsSticky(false);
         }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="flex justify-center w-full">
       <div
         ref={categorySectionRef}
-        className={`w-full max-w-[80%] ${
-          isSticky ? "fixed top-0 z-10 bg-white" : ""
+        className={`w-full max-w-[80%] transition-all duration-300 ${
+          isSticky ? "fixed top-[72px] z-40 bg-white" : ""
         }`}
       >
         <ItemCategoryList />

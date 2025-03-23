@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "@/components/header";
 import "./globals.css";
 import { roboto, nanumGothic } from "./font";
@@ -7,17 +9,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const detectLanguage = (children: React.ReactNode): string => {
-    const text = typeof children === "string" ? children : "";
-    const hasKorean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(text);
-
-    if (hasKorean) {
-      return "ko"; // 한글이 포함되면 'ko'로 설정
-    } else {
-      return "en"; // 영어가 포함되면 'en'으로 설정
-    }
-  };
-  const language = detectLanguage(children);
   return (
     <html lang={"ko"} className={`${roboto.variable} ${nanumGothic.variable}`}>
       <body>

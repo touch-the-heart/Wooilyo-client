@@ -6,7 +6,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="bg-white border-b-[1px] border-gray-900 sticky top-0 z-20">
+    <div className="bg-white border-b-[1px] border-gray-900 sticky top-0 z-50">
       <div className="px-5 sm:px-10 md:px-20 py-5 text-center flex flex-row justify-between">
         <Link href="/">
           <h1 className="text-2xl font-bold text-gray-900 cursor-pointer">
