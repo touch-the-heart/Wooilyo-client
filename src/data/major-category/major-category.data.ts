@@ -12,7 +12,7 @@ export const MAJOR_CATEGORIES = [
     display_value: "ABOUT",
   },
   {
-    key: "talk",
-    display_value: "TALK",
+    key: "contact",
+    display_value: "Contact",
   },
 ];
