@@ -6,9 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "api": "openapi-ts"
   },
   "dependencies": {
+    "@hey-api/client-next": "^0.3.0",
     "@tanstack/react-query": "^5.75.2",
     "axios": "^1.9.0",
     "next": "15.1.4",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@hey-api/openapi-ts": "^0.67.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
