@@ -12,8 +12,10 @@ export const ProductsSection = () => {
 
   useEffect(() => {
     if (currentCategory !== "all") {
-      const filteredData = PRODUCTS_DATA.filter(
-        (e) => e.category === currentCategory
+      const filteredData = PRODUCTS_DATA.filter((e) =>
+        e.categories.some(
+          (category) => category.category.key === currentCategory
+        )
       );
       setData([
         ...filteredData,

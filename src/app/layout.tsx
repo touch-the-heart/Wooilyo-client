@@ -3,6 +3,9 @@
 import { Header } from "@/components/header";
 import "./globals.css";
 import { roboto, nanumGothic } from "./font";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -11,17 +14,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={"ko"} className={`${roboto.variable} ${nanumGothic.variable}`}>
-      <body>
-        <div className="min-h-screen bg-white flex flex-col">
-          <Header />
-          {children}
-          <footer className="py-8 bg-white border-t-[1px] border-gray-900">
-            <div className="container mx-auto px-6 text-center text-gray-300">
-              <p>© 2025 WooilyoToujun. All rights reserved.</p>
-            </div>
-          </footer>
-        </div>
-      </body>
+      <QueryClientProvider client={queryClient}>
+        <body>
+          <div className="min-h-screen bg-white flex flex-col">
+            <Header />
+            {children}
+            <footer className="py-8 bg-white border-t-[1px] border-gray-900">
+              <div className="container mx-auto px-6 text-center text-gray-300">
+                <p>© 2025 WooilyoToujun. All rights reserved.</p>
+              </div>
+            </footer>
+          </div>
+        </body>
+      </QueryClientProvider>
     </html>
   );
 }

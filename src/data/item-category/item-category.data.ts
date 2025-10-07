@@ -1,34 +1,56 @@
-import { ITEM_CATEGORY } from "@/types/data";
+import { GetCategoriesByIdResponse } from "@/client";
+import { ITEM_CATEGORY } from "@/types/data/item-category.type";
 
-export const ITEM_CATEGORIES: ITEM_CATEGORY[] = [
+export const ITEM_CATEGORIES: GetCategoriesByIdResponse = [
   {
-    key: "bok",
-    type: "bok",
-    display_value: "복",
+    id: 1,
+    key: "set",
+    name: "세트",
+    level: 2,
+    createdAt: "",
+    parentId: 2,
   },
   {
+    id: 2,
     key: "bowl",
-    type: "bowl",
-    display_value: "볼",
+    name: "볼",
+    level: 2,
+    createdAt: "",
+    parentId: 3,
   },
   {
     key: "plate",
-    type: "plate",
-    display_value: "접시",
+    name: "접시",
+    level: 2,
   },
   {
-    key: "cup",
-    type: "cup",
-    display_value: "컵",
+    key: "serving",
+    name: "서빙",
+    level: 2,
+  },
+  {
+    key: "mug",
+    name: "머그",
+    level: 2,
+  },
+  {
+    key: "dagi",
+    name: "다기",
+    level: 2,
+  },
+  {
+    key: "object",
+    name: "소품",
+    level: 2,
   },
   {
     key: "others",
-    type: "others",
-    display_value: "기타",
+    name: "기타",
+    level: 2,
   },
   {
-    key: "set",
-    type: "set",
-    display_value: "세트",
+    key: "outlet",
+    name: "아울렛",
+    level: 2,
   },
 ];
