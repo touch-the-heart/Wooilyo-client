@@ -162,20 +162,45 @@ export default function ShopPage() {
               return (
                 <li key={category.key}>
                   {/* Level 2 카테고리 */}
-                  <div
-                    className="cursor-pointer text-lg hover:text-blue-600 transition-colors py-2"
-                    onClick={() => {
-                      // 항상 필터링 적용
-                      setCurruntType(category.key);
-                      setIsSidebarOpen(false);
+                  <div className="flex items-center justify-between py-2">
+                    <div
+                      className="cursor-pointer text-lg hover:text-blue-600 transition-colors flex-grow"
+                      onClick={() => {
+                        // 필터링만 적용
+                        setCurruntType(category.key);
+                        setIsSidebarOpen(false);
+                      }}
+                    >
+                      <span>{category.name}</span>
+                    </div>
 
-                      // 하위 카테고리가 있다면 아코디언도 토글
-                      if (hasChildren) {
-                        toggleCategory(category.id);
-                      }
-                    }}
-                  >
-                    <span>{category.name}</span>
+                    {/* 하위 카테고리가 있을 때만 화살표 표시 */}
+                    {hasChildren && (
+                      <button
+                        className="ml-2 p-1"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleCategory(category.id);
+                        }}
+                      >
+                        <svg
+                          className={`w-3 h-3 transition-transform duration-200 ${
+                            isExpanded ? "rotate-180" : ""
+                          }`}
+                          viewBox="0 0 12 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1L6 6L11 1"
+                            stroke="#9CA3AF"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    )}
                   </div>
 
                   {/* Level 3 하위 카테고리들 (아코디언) */}
@@ -203,7 +228,7 @@ export default function ShopPage() {
         </div>
 
         {/* 컨텐츠 */}
-        <div className="flex-grow p-5">
+        <div className="flex-grow p-10">
           {/* 브레드크럼 */}
           {breadcrumbPath.length > 0 && (
             <div className="mb-6 text-xs text-gray-400 font-bold">
