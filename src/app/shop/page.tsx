@@ -23,7 +23,7 @@ interface CategoryWithChildren {
 
 export default function ShopPage() {
   const [data, setData] = useState<PRODUCT[]>(PRODUCTS_DATA);
-  const [currentType, setCurruntType] = useState<string>("all");
+  const [currentType, setCurruntType] = useState<string>("set");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<Set<number>>(
     new Set()
@@ -75,6 +75,34 @@ export default function ShopPage() {
 
   console.log("계층적 카테고리:", hierarchicalCategories);
 
+  // 현재 선택된 카테고리 경로 생성
+  const breadcrumbPath = useMemo(() => {
+    if (currentType === "all" || !totalCategories?.data) return [];
+
+    const selectedCategory = totalCategories.data.find(
+      (cat) => cat.key === currentType
+    );
+
+    if (!selectedCategory) return [];
+
+    const path: (typeof selectedCategory)[] = [selectedCategory];
+
+    // 부모 카테고리들을 찾아서 추가
+    let currentCat = selectedCategory;
+    while (currentCat.parentId) {
+      const parentCat = totalCategories.data.find(
+        (cat) => cat.id === currentCat.parentId
+      );
+      if (parentCat && parentCat.key !== "shop") {
+        path.unshift(parentCat);
+      }
+      if (!parentCat) break;
+      currentCat = parentCat;
+    }
+
+    return path;
+  }, [currentType, totalCategories?.data]);
+
   // 처음 로드 시 첫 번째 카테고리 선택
   useEffect(() => {
     if (hierarchicalCategories.length > 0 && currentType === "all") {
@@ -120,7 +148,7 @@ export default function ShopPage() {
       <div className="flex flex-grow flex-col md:flex-row px-[60px]">
         {/* 사이드바 */}
         <div
-          className={`fixed inset-0 bg-white z-10 p-5 transform md:relative md:transform-none transition-transform duration-300 md:flex md:flex-col md:w-1/5 min-w-[200px] 
+          className={`fixed inset-0 bg-white z-10 p-5 transform md:relative md:transform-none transition-transform duration-300 md:flex md:flex-col md:w-[180px] 
           ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
@@ -132,10 +160,7 @@ export default function ShopPage() {
                 category.children && category.children.length > 0;
 
               return (
-                <li
-                  key={category.key}
-                  className="border-b border-gray-100 pb-2"
-                >
+                <li key={category.key}>
                   {/* Level 2 카테고리 */}
                   <div
                     className="cursor-pointer text-lg hover:text-blue-600 transition-colors py-2"
@@ -179,6 +204,18 @@ export default function ShopPage() {
 
         {/* 컨텐츠 */}
         <div className="flex-grow p-5">
+          {/* 브레드크럼 */}
+          {breadcrumbPath.length > 0 && (
+            <div className="mb-6 text-xs text-gray-400 font-bold">
+              {breadcrumbPath.map((cat, index) => (
+                <span key={cat.id}>
+                  {index > 0 && <span className="mx-2">{">"}</span>}
+                  <span>{cat.name}</span>
+                </span>
+              ))}
+            </div>
+          )}
+
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {data.map((product) => (
               <ProductItem

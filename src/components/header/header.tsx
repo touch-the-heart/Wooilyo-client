@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="bg-white border-b-[1px] border-gray-900 sticky top-0 z-50">
@@ -18,16 +18,36 @@ export const Header = () => {
 
         <div className="hidden md:flex flex-row items-center gap-10">
           <li className="list-none cursor-pointer">
-            <Link href="/shop">SHOP</Link>
+            <Link
+              href="/shop"
+              className={pathname === "/shop" ? "text-blue-600" : ""}
+            >
+              SHOP
+            </Link>
           </li>
           <li className="list-none cursor-pointer">
-            <Link href="/about">ABOUT</Link>
+            <Link
+              href="/about"
+              className={pathname === "/about" ? "text-blue-600" : ""}
+            >
+              ABOUT
+            </Link>
           </li>
           <li className="list-none cursor-pointer">
-            <Link href="/collection">COLLECTION</Link>
+            <Link
+              href="/collection"
+              className={pathname === "/collection" ? "text-blue-600" : ""}
+            >
+              COLLECTION
+            </Link>
           </li>
           <li className="list-none cursor-pointer">
-            <Link href="/contact">Contact</Link>
+            <Link
+              href="/contact"
+              className={pathname === "/contact" ? "text-blue-600" : ""}
+            >
+              Contact
+            </Link>
           </li>
         </div>
       </div>
